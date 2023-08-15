@@ -1,0 +1,47 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  /* ul li {
+    @apply hover:underline duration-150 cursor-pointer;
+  } */
+  .btn {
+    @apply hover:bg-Very_Dark_Gray px-5 py-4;
+  }
+}
+body {
+  font-family: "League Spartan", sans-serif;
+}
+
+.test {
+}
+
+.image-wrapper {
+  background: url("/images/desktop-image-hero-1.jpg") center center/cover;
+}
+ul li {
+  position: relative; /* Memastikan elemen li memiliki konteks relatif */
+  cursor: pointer;
+}
+
+ul li::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: rgb(255, 255, 255);
+  transition: width 0.3s; /* Menambahkan transisi untuk efek perubahan lebar */
+}
+
+ul li:hover::after {
+  width: 100%; /* Mengubah lebar saat elemen li dihover */
+}
+
+@media screen and (max-width: 1024px) {
+  ul li::after {
+    background-color: black;
+  }
+}
